@@ -1,19 +1,19 @@
-//
-//  MagnetScanner.swift
-//  MagnetScannerIOS
-//
-//  Created by Fernando Jiménez on 8/12/16.
-//  Copyright © 2016 Mozilla. All rights reserved.
-//
-
 import Foundation
 
-public class MagnetScanner {
-    public func start() {
-        print("MAGNET START");
+public class MagnetScannerSwift {
+    var scanners = [String: Scanner]()
+    var callback: ((Dictionary<String, AnyObject>) -> Void)!
+
+    public init(callback: (Dictionary<String, AnyObject>) -> Void) {
+        scanners["ble"] = BeaconScanner(callback: callback);
+        scanners["network"] = ScannerNetwork(callback: callback);
     }
-    
+
+    public func start() {
+        for (_, scanner) in scanners { scanner.start() }
+    }
+
     public func stop() {
-        print("MAGNET STOP");
+        for (_, scanner) in scanners { scanner.stop() }
     }
 }

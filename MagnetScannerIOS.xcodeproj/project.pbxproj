@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85DF9E731D5E226F00AD3796 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DF9E721D5E226F00AD3796 /* Scanner.swift */; };
+		85DF9E751D5E227A00AD3796 /* ScannerBle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DF9E741D5E227A00AD3796 /* ScannerBle.swift */; };
+		85DF9E771D5E22A900AD3796 /* ScannerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DF9E761D5E22A900AD3796 /* ScannerNetwork.swift */; };
 		85EC6E1A1D5DD39F0031AC70 /* MagnetScannerIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 85EC6E191D5DD39F0031AC70 /* MagnetScannerIOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		85EC6E211D5DD39F0031AC70 /* MagnetScannerIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EC6E161D5DD39F0031AC70 /* MagnetScannerIOS.framework */; };
 		85EC6E261D5DD39F0031AC70 /* MagnetScannerIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EC6E251D5DD39F0031AC70 /* MagnetScannerIOSTests.swift */; };
@@ -24,6 +27,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		85DF9E721D5E226F00AD3796 /* Scanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
+		85DF9E741D5E227A00AD3796 /* ScannerBle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerBle.swift; sourceTree = "<group>"; };
+		85DF9E761D5E22A900AD3796 /* ScannerNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerNetwork.swift; sourceTree = "<group>"; };
 		85EC6E161D5DD39F0031AC70 /* MagnetScannerIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MagnetScannerIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85EC6E191D5DD39F0031AC70 /* MagnetScannerIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagnetScannerIOS.h; sourceTree = "<group>"; };
 		85EC6E1B1D5DD39F0031AC70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +79,9 @@
 		85EC6E181D5DD39F0031AC70 /* MagnetScannerIOS */ = {
 			isa = PBXGroup;
 			children = (
+				85DF9E721D5E226F00AD3796 /* Scanner.swift */,
+				85DF9E741D5E227A00AD3796 /* ScannerBle.swift */,
+				85DF9E761D5E22A900AD3796 /* ScannerNetwork.swift */,
 				85EC6E191D5DD39F0031AC70 /* MagnetScannerIOS.h */,
 				85EC6E301D5DD4290031AC70 /* MagnetScanner.swift */,
 				85EC6E1B1D5DD39F0031AC70 /* Info.plist */,
@@ -199,7 +208,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85DF9E731D5E226F00AD3796 /* Scanner.swift in Sources */,
 				85EC6E311D5DD4290031AC70 /* MagnetScanner.swift in Sources */,
+				85DF9E751D5E227A00AD3796 /* ScannerBle.swift in Sources */,
+				85DF9E771D5E22A900AD3796 /* ScannerNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +399,7 @@
 				85EC6E2C1D5DD39F0031AC70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		85EC6E2D1D5DD39F0031AC70 /* Build configuration list for PBXNativeTarget "MagnetScannerIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -395,6 +408,7 @@
 				85EC6E2F1D5DD39F0031AC70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

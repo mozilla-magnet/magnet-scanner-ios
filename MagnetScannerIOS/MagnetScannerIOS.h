@@ -1,11 +1,3 @@
-//
-//  MagnetScannerIOS.h
-//  MagnetScannerIOS
-//
-//  Created by Fernando Jiménez on 8/12/16.
-//  Copyright © 2016 Mozilla. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for MagnetScannerIOS.
