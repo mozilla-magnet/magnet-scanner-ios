@@ -1,6 +1,6 @@
 import Foundation
 
-public class MagnetScannerSwift {
+public class MagnetScanner {
     var scanners = [String: Scanner]()
     var callback: ((Dictionary<String, AnyObject>) -> Void)!
 
