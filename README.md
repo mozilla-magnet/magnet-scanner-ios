@@ -9,7 +9,7 @@ Currently discovers urls based on the following protocols:
 * mDNS: urls advertised via this protocol.
 
 # Usage
-```
+```swift
 import Foundation
 import MagnetScannerIOS
 
