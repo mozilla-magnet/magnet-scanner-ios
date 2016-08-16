@@ -1,5 +1,6 @@
 # magnet-scanner-ios
 [![License](https://img.shields.io/badge/license-MPL2-blue.svg)](https://raw.githubusercontent.com/fxbox/foxbox/master/LICENSE)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 This is an iOS library that you can use in your projects to discover physical web objects around you.
 
