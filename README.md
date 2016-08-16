@@ -43,7 +43,7 @@ install `magnet-scanner-ios` with Carthage:
  2. Update your Cartfile to include the following:
 
     ```
-    github "mozilla-magnet/magnet-scanner-ios"
+    github "mozilla-magnet/magnet-scanner-ios" ~> 0.1.0
     ```
 
  3. Run `carthage update` and [add the appropriate framework][Carthage Usage].
