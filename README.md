@@ -28,7 +28,7 @@ class MagnetScannerClient: NSObject {
   }
 
   func onItemFound(item: Dictionary<String, AnyObject>) {
-    NSLog("ITEM FOUND");
+    debugPrint("Item found!");
     scanner.stop();
   }
 }
