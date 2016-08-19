@@ -73,3 +73,35 @@ device that the app is running on has them as well.
 
 [Carthage]: https://github.com/Carthage/Carthage
 [Carthage Installation]: https://github.com/Carthage/Carthage#installing-carthage
+
+## CocoaPods
+
+[CocoaPods][] is a dependency manager for Cocoa projects. To install
+MagnetScannerIOS with CocoaPods:
+
+ 1. Make sure the latest CocoaPods is [installed][CocoaPods Installation].
+
+    ``` sh
+    # Using the default Ruby install will require you to use sudo when
+    # installing and updating gems.
+    sudo gem install --pre cocoapods
+    ```
+
+ 2. Create a Podfile by running `pod init` into your project directory:
+
+ 3. Open your Podfile and add MagnetScannerIOS by specifying `pod MagnetScannerIOS`
+  on a single line inside your target block.
+
+  ```ruby
+target 'YourApp' do
+    pod 'MagnetScannerIOS'
+end
+  ```
+
+ 4. Run `pod install`.
+
+ 5. Close any current Xcode sessions and use `YourApp.xcworkspace` for your
+  project from that point on.
+
+[CocoaPods]: https://cocoapods.org
+[CocoaPods Installation]: https://guides.cocoapods.org/using/getting-started.html#getting-started
