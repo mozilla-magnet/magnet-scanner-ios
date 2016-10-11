@@ -17,6 +17,17 @@
 
 import CoreBluetooth
 
+// ios10 has depcrecated CBCentralManagerState, the following extension
+// is to continue supporting it, as the enums to define state are still the same.
+extension CBCentralManager {
+    
+    internal var centralManagerState: CBCentralManagerState  {
+        get {
+            return CBCentralManagerState(rawValue: state.rawValue) ?? .Unknown
+        }
+    }
+}
+
 ///
 /// BeaconScanner
 ///
@@ -53,7 +64,7 @@ class BeaconScanner: NSObject, Scanner, CBCentralManagerDelegate {
   }
 
   func centralManagerDidUpdateState(central: CBCentralManager)  {
-    if central.state == CBCentralManagerState.PoweredOn && self.shouldBeScanning {
+    if central.centralManagerState == CBCentralManagerState.PoweredOn && self.shouldBeScanning {
       start()
     }
   }
@@ -76,7 +87,7 @@ class BeaconScanner: NSObject, Scanner, CBCentralManagerDelegate {
 
   private func startScanningSynchronized() {
     dispatch_async(self.beaconOperationsQueue) {
-      if self.centralManager.state != CBCentralManagerState.PoweredOn {
+      if self.centralManager.centralManagerState != CBCentralManagerState.PoweredOn {
         debugPrint("CentralManager state is %d, cannot start scan", self.centralManager.state.rawValue)
         self.shouldBeScanning = true
       } else {
@@ -144,7 +155,7 @@ private func getUrl(bytes: [UInt8]) -> String? {
 
 private func isUrl(url: String) -> Bool {
   guard let url = NSURL(string: url) else { return false }
-  return !url.scheme.isEmpty
+  return (url.scheme?.isEmpty)!
 }
 
 private func getDistance(bytes: [UInt8], rssi: Double) -> Double {
