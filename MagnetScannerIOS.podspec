@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MagnetScannerIOS"
-  s.version      = "0.1.2"
+  s.version      = "0.2.3"
   s.summary      = "This is an iOS library that you can use in your projects to discover physical web objects around you."
 
   # This description is used to generate tags and improve search results.
@@ -71,6 +71,10 @@ Currently discovers urls based on the following protocols:
 
   # s.platform     = :ios
   s.platform     = :ios, "8.0"
+
+  s.pod_target_xcconfig = {
+    'SWIFT_VERSION' => '2.3',
+  }
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
