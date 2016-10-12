@@ -155,7 +155,7 @@ private func getUrl(bytes: [UInt8]) -> String? {
 
 private func isUrl(url: String) -> Bool {
   guard let url = NSURL(string: url) else { return false }
-  return (url.scheme?.isEmpty)!
+  return !((url.scheme?.isEmpty)!)
 }
 
 private func getDistance(bytes: [UInt8], rssi: Double) -> Double {
