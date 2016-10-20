@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		559608A71DB9112900816CF1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559608A51DB9112900816CF1 /* Alamofire.framework */; };
+		559608A81DB9112900816CF1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559608A61DB9112900816CF1 /* SwiftyJSON.framework */; };
+		559608AB1DB911C300816CF1 /* ScannerGeolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559608A91DB911C300816CF1 /* ScannerGeolocation.swift */; };
+		559608AC1DB911C300816CF1 /* NetworkResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559608AA1DB911C300816CF1 /* NetworkResolver.swift */; };
 		85DF9E731D5E226F00AD3796 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DF9E721D5E226F00AD3796 /* Scanner.swift */; };
 		85DF9E751D5E227A00AD3796 /* ScannerBle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DF9E741D5E227A00AD3796 /* ScannerBle.swift */; };
 		85DF9E771D5E22A900AD3796 /* ScannerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DF9E761D5E22A900AD3796 /* ScannerNetwork.swift */; };
@@ -27,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		559608A51DB9112900816CF1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		559608A61DB9112900816CF1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		559608A91DB911C300816CF1 /* ScannerGeolocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerGeolocation.swift; sourceTree = "<group>"; };
+		559608AA1DB911C300816CF1 /* NetworkResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResolver.swift; sourceTree = "<group>"; };
 		85DF9E721D5E226F00AD3796 /* Scanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
 		85DF9E741D5E227A00AD3796 /* ScannerBle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerBle.swift; sourceTree = "<group>"; };
 		85DF9E761D5E22A900AD3796 /* ScannerNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerNetwork.swift; sourceTree = "<group>"; };
@@ -44,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				559608A71DB9112900816CF1 /* Alamofire.framework in Frameworks */,
+				559608A81DB9112900816CF1 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +68,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		559608A11DB90FCF00816CF1 /* ble */ = {
+			isa = PBXGroup;
+			children = (
+				85DF9E741D5E227A00AD3796 /* ScannerBle.swift */,
+			);
+			name = ble;
+			sourceTree = "<group>";
+		};
+		559608A21DB90FDD00816CF1 /* mdns */ = {
+			isa = PBXGroup;
+			children = (
+				85DF9E761D5E22A900AD3796 /* ScannerNetwork.swift */,
+			);
+			name = mdns;
+			sourceTree = "<group>";
+		};
+		559608A31DB90FE100816CF1 /* geo */ = {
+			isa = PBXGroup;
+			children = (
+				559608A91DB911C300816CF1 /* ScannerGeolocation.swift */,
+				559608AA1DB911C300816CF1 /* NetworkResolver.swift */,
+			);
+			name = geo;
+			sourceTree = "<group>";
+		};
+		559608A41DB9112900816CF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				559608A51DB9112900816CF1 /* Alamofire.framework */,
+				559608A61DB9112900816CF1 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		85EC6E0C1D5DD39F0031AC70 = {
 			isa = PBXGroup;
 			children = (
 				85EC6E181D5DD39F0031AC70 /* MagnetScannerIOS */,
 				85EC6E241D5DD39F0031AC70 /* MagnetScannerIOSTests */,
 				85EC6E171D5DD39F0031AC70 /* Products */,
+				559608A41DB9112900816CF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,9 +124,10 @@
 		85EC6E181D5DD39F0031AC70 /* MagnetScannerIOS */ = {
 			isa = PBXGroup;
 			children = (
+				559608A31DB90FE100816CF1 /* geo */,
+				559608A21DB90FDD00816CF1 /* mdns */,
+				559608A11DB90FCF00816CF1 /* ble */,
 				85DF9E721D5E226F00AD3796 /* Scanner.swift */,
-				85DF9E741D5E227A00AD3796 /* ScannerBle.swift */,
-				85DF9E761D5E22A900AD3796 /* ScannerNetwork.swift */,
 				85EC6E191D5DD39F0031AC70 /* MagnetScannerIOS.h */,
 				85EC6E301D5DD4290031AC70 /* MagnetScanner.swift */,
 				85EC6E1B1D5DD39F0031AC70 /* Info.plist */,
@@ -160,7 +206,7 @@
 				TargetAttributes = {
 					85EC6E151D5DD39F0031AC70 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = K25ELH4YQ8;
+						DevelopmentTeam = 43AQ936H96;
 					};
 					85EC6E1F1D5DD39F0031AC70 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -211,6 +257,8 @@
 				85DF9E731D5E226F00AD3796 /* Scanner.swift in Sources */,
 				85EC6E311D5DD4290031AC70 /* MagnetScanner.swift in Sources */,
 				85DF9E751D5E227A00AD3796 /* ScannerBle.swift in Sources */,
+				559608AB1DB911C300816CF1 /* ScannerGeolocation.swift in Sources */,
+				559608AC1DB911C300816CF1 /* NetworkResolver.swift in Sources */,
 				85DF9E771D5E22A900AD3796 /* ScannerNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +388,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MagnetScannerIOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -362,6 +414,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MagnetScannerIOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
