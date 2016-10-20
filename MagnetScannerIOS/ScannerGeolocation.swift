@@ -9,8 +9,8 @@ import Foundation
 import CoreLocation
 import SwiftyJSON
 
-class ScannerGeo: NSObject, CLLocationManagerDelegate, Scanner {
-  let lManager: CLLocationManager = CLLocationManager()
+class ScannerGeolocation: NSObject, CLLocationManagerDelegate, Scanner {
+  let locationManager: CLLocationManager = CLLocationManager()
   var callback: ((Dictionary<String, AnyObject>) -> Void)!
   var initialized: Bool = false;
   
@@ -24,7 +24,7 @@ class ScannerGeo: NSObject, CLLocationManagerDelegate, Scanner {
   }
   
   func stop() {
-    lManager.stopUpdatingLocation()
+    locationManager.stopUpdatingLocation()
   }
   
   func startLocationManager() -> Bool {
@@ -33,15 +33,15 @@ class ScannerGeo: NSObject, CLLocationManagerDelegate, Scanner {
     }
     
     guard initialized == false else {
-      lManager.startUpdatingLocation()
+      locationManager.startUpdatingLocation()
       return true
     }
     
-    lManager.delegate = self
-    lManager.desiredAccuracy = kCLLocationAccuracyBest
-    lManager.requestWhenInUseAuthorization()
+    locationManager.delegate = self
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    locationManager.requestWhenInUseAuthorization()
     
-    lManager.startUpdatingLocation()
+    locationManager.startUpdatingLocation()
     initialized  = true;
     
     return true;
