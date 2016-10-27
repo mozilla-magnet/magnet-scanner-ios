@@ -50,7 +50,7 @@ class ScannerGeolocation: NSObject, CLLocationManagerDelegate, Scanner {
   // Deletegate methods
   func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     stop()
-    guard let location: CLLocation = locations.first else {
+    guard let location: CLLocation = locations.last else {
       return
     }
     
