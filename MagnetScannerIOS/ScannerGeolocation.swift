@@ -12,7 +12,9 @@ import SwiftyJSON
 class ScannerGeolocation: NSObject, CLLocationManagerDelegate, Scanner {
   let locationManager: CLLocationManager = CLLocationManager()
   var callback: ((Dictionary<String, AnyObject>) -> Void)!
-  var initialized: Bool = false;
+  var initialized: Bool = false
+  var lastLocation: CLLocation!
+  let MIN_DISTANCE: Double = 10
   
   init(callback: (Dictionary<String, AnyObject>) -> Void) {
     super.init()
@@ -20,6 +22,7 @@ class ScannerGeolocation: NSObject, CLLocationManagerDelegate, Scanner {
   }
   
   func start() {
+    lastLocation = nil
     startLocationManager()
   }
   
@@ -46,6 +49,10 @@ class ScannerGeolocation: NSObject, CLLocationManagerDelegate, Scanner {
     
     return true;
   }
+    
+  private func isValidLocation(location: CLLocation) -> Bool {
+    return lastLocation == nil || lastLocation!.distanceFromLocation(location) < MIN_DISTANCE
+  }
   
   // Deletegate methods
   func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -53,6 +60,12 @@ class ScannerGeolocation: NSObject, CLLocationManagerDelegate, Scanner {
     guard let location: CLLocation = locations.last else {
       return
     }
+    
+    guard isValidLocation(location) else {
+      return
+    }
+    
+    lastLocation = location
     
     let lat: CLLocationDegrees = location.coordinate.latitude
     let lon: CLLocationDegrees = location.coordinate.longitude
