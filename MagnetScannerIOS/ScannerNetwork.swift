@@ -43,6 +43,7 @@ class ScannerNetwork: NSObject, Scanner, NSNetServiceBrowserDelegate {
 
   private func isUrl(url: String) -> Bool {
     guard let url = NSURL(string: url) else { return false }
+    guard url.scheme != nil else { return false }
     return !((url.scheme?.isEmpty)!)
   }
 }
