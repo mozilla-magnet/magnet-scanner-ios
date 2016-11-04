@@ -42,11 +42,11 @@ public class NetworkResolver {
     var result: Array<JSON> = Array()
     for item in json.arrayValue {
       if let shortUrl = item["short_url"].string {
-        result.append(JSON(["url": shortUrl, "channel": item["channel_id"].string!]))
+        result.append(JSON(["url": shortUrl, "channel_id": item["channel_id"].string!]))
       }
       else if let slug = item["slug"].string {
         let url: String = "\(SLUG_BASE_URL)\(slug)"
-        result.append(JSON(["url": url, "channel": item["channel_id"].string!]))
+        result.append(JSON(["url": url, "channel_id": item["channel_id"].string!]))
       }
     }
 
