@@ -76,7 +76,8 @@ class ScannerGeolocation: NSObject, CLLocationManagerDelegate, Scanner {
     NetworkResolver.resolveLocation(lat, lon: lon, callback: {(result: Array<JSON>) in
       result.forEach({ (json) in
         let url = json["url"].string
-        let magnetItem: Dictionary<String, AnyObject> = ["url": url!]
+        let channel = json["channel"].string
+        let magnetItem: Dictionary<String, AnyObject> = ["url": url!, "channel": channel!]
         self.callback(magnetItem)
       })
     })
