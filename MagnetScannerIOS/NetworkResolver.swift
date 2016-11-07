@@ -41,9 +41,12 @@ public class NetworkResolver {
   private static func filterJSON(json: JSON) -> Array<JSON> {
     var result: Array<JSON> = Array()
     for item in json.arrayValue {
-      if let slug = item["slug"].string {
+      if let shortUrl = item["short_url"].string {
+        result.append(JSON(["url": shortUrl, "channel_id": item["channel_id"].string!]))
+      }
+      else if let slug = item["slug"].string {
         let url: String = "\(SLUG_BASE_URL)\(slug)"
-        result.append(JSON(["url": url]))
+        result.append(JSON(["url": url, "channel_id": item["channel_id"].string!]))
       }
     }
 
