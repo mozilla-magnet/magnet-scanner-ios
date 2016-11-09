@@ -77,7 +77,14 @@ class ScannerGeolocation: NSObject, CLLocationManagerDelegate, Scanner {
       result.forEach({ (json) in
         let url = json["url"].string
         let channel = json["channel_id"].string
-        let magnetItem: Dictionary<String, AnyObject> = ["url": url!, "channel_id": channel!]
+        let latitude = json["latitude"].number
+        let longitude = json["longitude"].number
+        let magnetItem: Dictionary<String, AnyObject> = [
+          "url": url!,
+          "channel_id": channel!,
+          "latitude": latitude!,
+          "longitude": longitude!
+        ]
         self.callback(magnetItem)
       })
     })
