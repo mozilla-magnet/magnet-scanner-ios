@@ -1,5 +1,5 @@
 //
-//  OneShotLocation.swift
+//  LocationHelper.swift
 //  MagnetScannerIOS
 //
 //  Created by Francisco Jordano on 09/11/2016.
@@ -9,10 +9,10 @@
 import Foundation
 import CoreLocation
 
-public class OneShotLocation: NSObject, CLLocationManagerDelegate {
+public class LocationHelper: NSObject, CLLocationManagerDelegate {
     let locationManager:CLLocationManager = CLLocationManager()
     var callback: ((CLLocation) -> Void)?
-    var bestEffort: CLLocation?
+    var lastValidLocation: CLLocation?
     
     public override init() {
         super.init()
@@ -25,7 +25,7 @@ public class OneShotLocation: NSObject, CLLocationManagerDelegate {
     
     @objc public func start(callback: (CLLocation) -> Void) {
         self.callback = callback
-        self.bestEffort = nil
+        self.lastValidLocation = nil
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         self.locationManager.distanceFilter = 10
@@ -47,11 +47,11 @@ public class OneShotLocation: NSObject, CLLocationManagerDelegate {
             return
         }
         
-        guard bestEffort == nil || bestEffort!.horizontalAccuracy > location.horizontalAccuracy else {
+        guard lastValidLocation == nil || lastValidLocation!.horizontalAccuracy > location.horizontalAccuracy else {
             return
         }
         
-        bestEffort = location
+        lastValidLocation = location
         
         guard location.horizontalAccuracy <= self.locationManager.desiredAccuracy else {
             NSLog("Discarding location \(location) because accuracy \(location.horizontalAccuracy) is \(self.locationManager.desiredAccuracy)")
@@ -61,7 +61,6 @@ public class OneShotLocation: NSObject, CLLocationManagerDelegate {
         stop()
         
         self.callback!(location)
-        
     }
 }
 

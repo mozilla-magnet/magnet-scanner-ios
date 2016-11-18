@@ -17,7 +17,7 @@ public class NetworkResolver {
   static let API_END_POINT: String = "https://tengam.org/content/v1/search/beacons/"
   static let RADIUS: Int = 100
 
-  static func resolveLocation(lat: Double, lon: Double, callback: (Array<JSON> -> Void)!) {
+  static func getItemsForLocation(lat: Double, lon: Double, callback: (Array<JSON> -> Void)!) {
     let url: String = "\(API_END_POINT)\(lat),\(lon),\(RADIUS)"
     NSLog("Performing geo search request: \(url)")
 

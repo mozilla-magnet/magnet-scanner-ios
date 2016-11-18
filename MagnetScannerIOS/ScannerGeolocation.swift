@@ -10,7 +10,7 @@ import CoreLocation
 import SwiftyJSON
 
 class ScannerGeolocation: NSObject, CLLocationManagerDelegate, Scanner {
-  var locationResolver: OneShotLocation = OneShotLocation()
+  var locationResolver: LocationHelper = LocationHelper()
   var callback: ((Dictionary<String, AnyObject>) -> Void)!
   
   init(callback: (Dictionary<String, AnyObject>) -> Void) {
@@ -26,7 +26,7 @@ class ScannerGeolocation: NSObject, CLLocationManagerDelegate, Scanner {
       NSLog("Got location update \(lat),\(lon)")
     
       // Here is where we call to the magnet service and then update the callback
-      NetworkResolver.resolveLocation(lat, lon: lon, callback: {(result: Array<JSON>) in
+      NetworkResolver.getItemsForLocation(lat, lon: lon, callback: {(result: Array<JSON>) in
           result.forEach({ (json) in
               let url = json["url"].string
               let channel = json["channel_id"].string

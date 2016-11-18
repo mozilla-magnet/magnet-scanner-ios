@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		552E19781DDB374300AA07F9 /* OneShotLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E19771DDB374300AA07F9 /* OneShotLocation.swift */; };
+		5527E9F81DDF50F100DDD57A /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5527E9F71DDF50F100DDD57A /* LocationHelper.swift */; };
 		559608A71DB9112900816CF1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559608A51DB9112900816CF1 /* Alamofire.framework */; };
 		559608A81DB9112900816CF1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559608A61DB9112900816CF1 /* SwiftyJSON.framework */; };
 		559608AB1DB911C300816CF1 /* ScannerGeolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559608A91DB911C300816CF1 /* ScannerGeolocation.swift */; };
@@ -32,7 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		552E19771DDB374300AA07F9 /* OneShotLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneShotLocation.swift; sourceTree = "<group>"; };
+		5527E9F71DDF50F100DDD57A /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		559608A51DB9112900816CF1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		559608A61DB9112900816CF1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		559608A91DB911C300816CF1 /* ScannerGeolocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerGeolocation.swift; sourceTree = "<group>"; };
@@ -89,9 +89,9 @@
 		559608A31DB90FE100816CF1 /* geo */ = {
 			isa = PBXGroup;
 			children = (
+				5527E9F71DDF50F100DDD57A /* LocationHelper.swift */,
 				559608A91DB911C300816CF1 /* ScannerGeolocation.swift */,
 				559608AA1DB911C300816CF1 /* NetworkResolver.swift */,
-				552E19771DDB374300AA07F9 /* OneShotLocation.swift */,
 			);
 			name = geo;
 			sourceTree = "<group>";
@@ -259,10 +259,10 @@
 			files = (
 				85DF9E731D5E226F00AD3796 /* Scanner.swift in Sources */,
 				85EC6E311D5DD4290031AC70 /* MagnetScanner.swift in Sources */,
-				552E19781DDB374300AA07F9 /* OneShotLocation.swift in Sources */,
 				85DF9E751D5E227A00AD3796 /* ScannerBle.swift in Sources */,
 				559608AB1DB911C300816CF1 /* ScannerGeolocation.swift in Sources */,
 				559608AC1DB911C300816CF1 /* NetworkResolver.swift in Sources */,
+				5527E9F81DDF50F100DDD57A /* LocationHelper.swift in Sources */,
 				85DF9E771D5E22A900AD3796 /* ScannerNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
